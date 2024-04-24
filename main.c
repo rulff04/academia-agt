@@ -3,7 +3,7 @@
 
 int main ()
 {
-    int opcao;
+    int opcao, natacao, mensalidade;
     char adesao;
     int natacao;
     int mensalidade;
@@ -26,14 +26,18 @@ int main ()
             switch (adesao)
             {
                 case 'a':
-                    printf("\n (1) Mensal\
-                            \n (2) Anual");
+                    printf("\n (1) Mensal R$ 220\
+                            \n (2) Anual R$ 198");
                     scanf("%i", &natacao);
-                    case 1: 
-                        mensalidade = 220;
-                    case 2:
-                        mensalidade = 198;
-                        printf("");
+                        switch (natacao)
+                        {
+                        case 1:
+                            mensalidade = 220;
+                            break;
+                        case 2:
+                            mensalidade = 198;
+                            break;
+                        }
 
                 break;
 
