@@ -194,7 +194,7 @@ int main ()
         printf("\nCliente: %c", cliente);
         printf("%c (%c)", categoria, periodo);
         printf("\nPagamento %c", pagamento);
-        if (case 1 == 'd')||(case 1 == 'e');
+        if (case 1 == 'd')||(case 1 == 'e'); // ou  (adesao == 'd')||(adesao == 'e')?????????
             printf("\n12 x R$ %i", mensalidade);
             printf("Total : %i", total);
         else
