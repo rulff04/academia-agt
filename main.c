@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+
 
 int main ()
 {
@@ -14,6 +16,7 @@ int main ()
     char periodo;
     int valor;
     char pagamento[100], cliente[100], categoria[100], horario[100];
+    int total;
 
     printf("\n (1) Adesão\
             \n (2) Acompanhamento\
@@ -25,11 +28,11 @@ int main ()
     switch(opcao)
     {
         case 1:
-            printf("\n a) Natação\
-                    \n b) Musculação\
-                    \n c) Treinamento Funcional\
-                    \n d) Plano seco: musculação + funcional\
-                    \n e) Plano molhado: musculação + natação");
+            printf("\n (a) Natação\
+                    \n (b) Musculação\
+                    \n (c) Treinamento Funcional\
+                    \n (d) Plano seco: musculação + funcional\
+                    \n (e) Plano molhado: musculação + natação");
             scanf("%c", &adesao);
             switch (adesao)
             {
@@ -49,21 +52,20 @@ int main ()
                             strcpy(pagamento, "Anual");
                         break;
                     }
-                    printf("\n a) Dia\
-                            \n b) Noite")
+                    printf("\n Período:
+                            \n a) Dia\
+                            \n b) Noite");
                     scanf("%c", &periodo);
                     switch (periodo);
                     {
                         case 'a':
                             strcpy(horario, "Dia");
                         break;
-                        case 'b';
+                        case 'b':
                             valor = mensalidade + 50;
                             strcpy(horario, "Noite");
                         break;
                     }
-                    printf("\n Período:\
-                            ")
                 break;
                 case 'b':
                     strcpy(categoria, "Musculação");
@@ -81,6 +83,18 @@ int main ()
                             strcpy(pagamento, "Anual");
                         break;
                     }
+                     printf("\n Período:\
+                            \n (a) Dia\
+                            \n (b) Noite");
+                    scanf("%c", &periodo);
+                    switch (periodo);
+                    {
+                        case 'a':
+                            strcpy(horario, "Dia");
+                        break;
+                        case 'b';
+                            strcpy(horario, "Noite");
+                        break; 
                 break;
                 case 'c':
                     strcpy(categoria, "Funcional");
@@ -98,6 +112,18 @@ int main ()
                             strcpy(pagamento, "Anual");
                         break;
                     }
+                     printf("\n Período:
+                            \n (a) Dia\
+                            \n (b) Noite");
+                    scanf("%c", &periodo);
+                    switch (periodo);
+                    {
+                        case 'a':
+                            strcpy(horario, "Dia");
+                        break;
+                        case 'b';
+                            strcpy(horario, "Noite");
+                        break;
                 break;
                 case 'd':
                     strcpy(categoria, "Plano Seco");
@@ -109,11 +135,24 @@ int main ()
                         printf("\nINDISPONÍVEL, ESCOLHER OUTRA OPÇÃO!");
                         printf("\n =============================================")
                         printf("\n (1) Não tem MENSAL\
-                            \n (2) Anual R$ 100 + 180");
+                                \n (2) Anual R$ 100 + 180");
                         scanf("%i", &seco);
                     }
                     mensalidade = 280;
+                    total = 280 * 12;
                     strcpy(pagamento, "Anual");
+                     printf("\n Período:
+                            \n (a) Dia\
+                            \n (b) Noite");
+                    scanf("%c", &periodo);
+                    switch (periodo);
+                    {
+                        case 'a':
+                            strcpy(horario, "Dia");
+                        break;
+                        case 'b';
+                            strcpy(horario, "Noite");
+                        break;
                         
                 break;
                 case 'e':
@@ -124,17 +163,43 @@ int main ()
                     while (molhado == 1)
                     {
                         printf("\n INDISPONÍVEL, ESCOLHA OUTRA OPÇÃO!")
+                        printf("\n =============================================")
                         printf("\n (1) Não tem MENSAL\
-                            \n (2) Anual R$ 100 + 198");
+                                \n (2) Anual R$ 100 + 198");
                         scanf("%i", &molhado);
                     }
                     mensalidade = 298;
+                    total = 298 * 12;
                     strcpy(pagamento, "Anual");
+                     printf("\n Período:
+                            \n (a) Dia\
+                            \n (b) Noite");
+                    scanf("%c", &periodo);
+                    switch (periodo);
+                    {
+                        case 'a':
+                            strcpy(horario, "Dia");
+                        break;
+                        case 'b';
+                            strcpy(horario, "Noite");
+                        break;
                 break;
                 
             }
         break;
+        printf("\n-Escreva seu nome: ");
+        scanf("%c", &cliente);
+        strcpy(cliente);
+        printf("\n =============================================");
+        printf("\nCliente: %c", cliente);
+        printf("%c (%c)", categoria, periodo);
+        printf("\nPagamento %c", pagamento);
+        if (case 1 == 'd')||(case 1 == 'e');
+            printf("\n12 x R$ %i", mensalidade);
+            printf("Total : %i", total);
+        else
+            printf("\nR$ %i", mensalidade);
     }
     
     return 0;
-}
+} 
